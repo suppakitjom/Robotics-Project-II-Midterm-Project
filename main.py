@@ -23,7 +23,7 @@ cap.set(5, VIDEO_FPS)
 # automatically loads the images in the known_faces folder
 known_face_encodings = []
 known_face_names = []
-path = "/Users/jom/Documents/GitHub/Robotics Project 2.1/known_faces"
+path = os.path.join(os.path.dirname(__file__), "known_faces")
 facelist = os.listdir(path)
 
 for name in facelist:
