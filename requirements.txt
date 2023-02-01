@@ -1,5 +1,11 @@
 numpy
 opencv-python
-face_recognition
+face_recognition 
 rasa
+Flask
 pyserial
+openai-whisper
+SpeechRecognition
+# pyaudio 
+# sudo apt-get install portaudio19-dev python-all-dev python3-all-dev && sudo pip3 install pyaudio 
+pydub
