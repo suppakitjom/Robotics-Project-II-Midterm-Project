@@ -12,11 +12,21 @@ nlu:
       - yes please let them in
 
   - intent: deny
-      examples: |
-        - no
-        - no please
-        - no please don't let them in
-        - no don't let them in
-        - don't let them in
-        - don't let them in please
+    examples: |
+      - no
+      - no please
+      - no please don't let them in
+      - don't let them in
+      - don't let them in please
+      - no, don't let them in
+      - no, don't let them in please
 
+  - intent: hello_world
+    examples: |
+      - hello world
+      - hello
+      - hi
+      - hey
+      - hello there
+      - hi there
+      - hey there

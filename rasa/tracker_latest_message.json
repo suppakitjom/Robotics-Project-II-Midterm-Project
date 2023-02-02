@@ -1,0 +1,54 @@
+{
+    "intent": {
+        "name": "allow",
+        "confidence": 1.0
+    },
+    "entities": [],
+    "text": "please let them in",
+    "message_id": "94bd1a86d63a47c88304a1659d6acf4c",
+    "metadata": {},
+    "text_tokens": [
+        [
+            0,
+            6
+        ],
+        [
+            7,
+            10
+        ],
+        [
+            11,
+            15
+        ],
+        [
+            16,
+            18
+        ]
+    ],
+    "intent_ranking": [
+        {
+            "name": "allow",
+            "confidence": 1.0
+        },
+        {
+            "name": "hello_world",
+            "confidence": 1.6316649364966906e-08
+        },
+        {
+            "name": "deny",
+            "confidence": 8.282635133305405e-10
+        }
+    ],
+    "response_selector": {
+        "all_retrieval_intents": [],
+        "default": {
+            "response": {
+                "responses": null,
+                "confidence": 0.0,
+                "intent_response_key": null,
+                "utter_action": "utter_None"
+            },
+            "ranking": []
+        }
+    }
+}

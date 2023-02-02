@@ -3,10 +3,15 @@ version: "3.1"
 intents:
   - allow
   - deny
+  - hello_world
 
-responses:
-  utter_greet:
-    - text: "Hey! How are you?"
+actions:
+  - action_hello_world
+  - action_send_intent
+
+# responses:
+#   utter_greet:
+#     - text: "Hey! How are you?"
 
 session_config:
   session_expiration_time: 60

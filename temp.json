@@ -1,0 +1,48 @@
+{
+    "text": "blah blah blah",
+    "intent": {
+        "name": "hello_world",
+        "confidence": 0.5124806761741638
+    },
+    "entities": [],
+    "text_tokens": [
+        [
+            0,
+            4
+        ],
+        [
+            5,
+            9
+        ],
+        [
+            10,
+            14
+        ]
+    ],
+    "intent_ranking": [
+        {
+            "name": "hello_world",
+            "confidence": 0.5124806761741638
+        },
+        {
+            "name": "allow",
+            "confidence": 0.30774369835853577
+        },
+        {
+            "name": "deny",
+            "confidence": 0.17977556586265564
+        }
+    ],
+    "response_selector": {
+        "all_retrieval_intents": [],
+        "default": {
+            "response": {
+                "responses": null,
+                "confidence": 0.0,
+                "intent_response_key": null,
+                "utter_action": "utter_None"
+            },
+            "ranking": []
+        }
+    }
+}
