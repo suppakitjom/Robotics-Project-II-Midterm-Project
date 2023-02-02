@@ -1,6 +1,6 @@
 import requests
 
-tts_url = 'http://localhost:5003/tts'
+tts_url = 'http://localhost:5001/tts'
 
 
 def speak(text):

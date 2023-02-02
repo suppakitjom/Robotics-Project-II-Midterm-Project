@@ -1,6 +1,6 @@
 numpy
 opencv-python
-face_recognition 
+# face_recognition refer to docs for jetson
 rasa
 Flask
 pyserial
@@ -10,3 +10,4 @@ SpeechRecognition
 # sudo apt-get install portaudio19-dev python-all-dev python3-all-dev && sudo pip3 install pyaudio 
 pydub
 azure-cognitiveservices-speech
+simpleaudio

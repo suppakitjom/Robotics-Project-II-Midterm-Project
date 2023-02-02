@@ -1,11 +1,28 @@
 # Robotics-Project-II-Midterm-Project
 
-# Setting up
-create conda environment
-```conda create -n roboproject2_1 python=3.9.15```
+# Details
 
-activate created environment
-```conda activate roboproject2_1```
+tts_url = 'http://localhost:5001/tts'
+asr_url = 'http://localhost:5002/stt'
+rasa_url = 'http://localhost:5005/model/parse'
 
-install libraries
-```pip install -r requirements.txt```
+## Run ASR
+
+`cd asr`
+
+`python asr.py`
+
+## Run TTS
+
+`cd tts`
+
+`python tts.py`
+
+## Run RASA
+
+`cd rasa`
+
+`rasa run --enable-api`
+
+in a separate terminal
+`rasa run actions`

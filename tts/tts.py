@@ -8,10 +8,9 @@ speech_config = speechsdk.SpeechConfig(
     subscription='44d7d58744334bea8b7c72de640ed3e3', region='southeastasia')
 audio_config = speechsdk.audio.AudioOutputConfig(use_default_speaker=True)
 
-
-@app.route("/")
-def home():
-    return "home"
+# @app.route("/")
+# def home():
+#     return "home"
 
 
 @app.route('/ttsbasic', methods=['POST'])
@@ -42,7 +41,7 @@ def speakTextSSML():  #change voice and style in tts_voice_config.xml
     return []
 
 
-app.run(host='localhost', port=5003)
+app.run(host='localhost', port=5001)
 
 if __name__ == "__main__":
     speakTextSSML()
