@@ -4,7 +4,7 @@ import io
 import os
 
 r = sr.Recognizer()
-r.energy_threshold = 400
+r.energy_threshold = 1400
 r.dynamic_energy_threshold = True
 
 with sr.Microphone() as source:
