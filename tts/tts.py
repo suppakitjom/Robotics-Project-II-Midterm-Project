@@ -29,11 +29,11 @@ def speakText():
 def speakTextSSML():  #change voice and style in tts_voice_config.xml
     body = request.get_json()
     text = body['text']
-    print(text)
     if not text:
         text = 'An Unknown Person is at the door. Would you like to let them in?'
     synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config,
                                               audio_config=audio_config)
+    print('Input text --->', text)
     ssml_string = open("tts_voice_config.xml", "r").read()
     ssml_string = ssml_string.replace('TEXT', text)
     sa.WaveObject.from_wave_file("ring.wav").play().wait_done()

@@ -13,8 +13,8 @@ import os
 # specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
 
 # camera setup
-# [CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [1, 1920, 1080, 60]
-[CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [1, 1280, 720, 30]
+# [CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [0, 1920, 1080, 60]
+[CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [0, 1280, 720, 60]
 cap = cv2.VideoCapture(CAMERA_PORT)
 cap.set(3, X_RESOLUTION)
 cap.set(4, Y_RESOLUTION)
@@ -76,8 +76,9 @@ while True:
             face_distances = fr.face_distance(known_face_encodings,
                                               face_encoding)
             best_match_index = np.argmin(face_distances)
+            print(face_distances[best_match_index])
             if matches[best_match_index] and face_distances[
-                    best_match_index] < 0.3:
+                    best_match_index] < 0.45:
                 name = known_face_names[best_match_index]
 
             face_names.append(name)
