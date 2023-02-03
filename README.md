@@ -2,6 +2,8 @@
 
 # Details
 
+cv_url : http://localhost:5000/cv
+
 tts_url : http://localhost:5001/tts
 
 asr_url : http://localhost:5002/stt

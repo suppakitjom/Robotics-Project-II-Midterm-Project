@@ -10,7 +10,7 @@ app = Flask(__name__)
 @app.route("/stt", methods=['POST'])
 def listen():
     r = sr.Recognizer()
-    r.energy_threshold = 1400
+    r.energy_threshold = 300
     r.dynamic_energy_threshold = True
 
     with sr.Microphone() as source:

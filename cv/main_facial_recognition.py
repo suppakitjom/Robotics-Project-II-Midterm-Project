@@ -13,8 +13,8 @@ import os
 # specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
 
 # camera setup
-# [CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [0, 1920, 1080, 60]
-[CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [0, 1280, 720, 60]
+[CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [1, 1920, 1080, 60]
+# [CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [0, 1280, 720, 60]
 cap = cv2.VideoCapture(CAMERA_PORT)
 cap.set(3, X_RESOLUTION)
 cap.set(4, Y_RESOLUTION)
@@ -82,7 +82,10 @@ while True:
                 name = known_face_names[best_match_index]
 
             face_names.append(name)
-
+        # dumps face names to a file
+        with open("recognized.txt", "w") as f:
+            for name in face_names:
+                f.write(name + "\n")
     process_this_frame = not process_this_frame
 
     # Display the results

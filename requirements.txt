@@ -2,7 +2,7 @@ numpy
 opencv-python
 # face_recognition refer to docs for jetson
 # install dlib manually first
-rasa
+# rasa
 Flask
 pyserial
 openai-whisper
