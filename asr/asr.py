@@ -26,7 +26,7 @@ def listen():
 app.run(host='localhost', port=5002)
 
 if __name__ == "__main__":
-    text = listen()['text']
+    text = listen()
     data = io.BytesIO(audio.get_wav_data())
     audio_clip = AudioSegment.from_file(data)
     audio_clip.export('temp.wav', format="wav")
