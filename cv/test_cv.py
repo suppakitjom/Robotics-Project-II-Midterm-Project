@@ -4,7 +4,7 @@ cv_url = 'http://localhost:5000/cv'
 
 
 def getRecognizedPeople():
-    r = requests.post(cv_url)
+    r = requests.get(cv_url)
     return r.json()
 
 

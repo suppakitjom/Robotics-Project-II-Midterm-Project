@@ -7,7 +7,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 
-@app.route("/stt", methods=['POST'])
+@app.route("/stt", methods=['GET'])
 def listen():
     r = sr.Recognizer()
     r.energy_threshold = 300

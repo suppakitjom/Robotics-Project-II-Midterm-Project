@@ -25,7 +25,7 @@ def speakText():
     return []
 
 
-@app.route('/tts', methods=['POST'])
+@app.route('/tts', methods=['PUT'])
 def speakTextSSML():  #change voice and style in tts_voice_config.xml
     body = request.get_json()
     text = body['text']

@@ -3,7 +3,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/cv', methods=['POST'])
+@app.route('/cv', methods=['GET'])
 def getRecognizedPeople():
     #extract the recognized people from the recognized.txt
     recognized = []
