@@ -9,5 +9,5 @@ def speak(text):
 
 
 if __name__ == "__main__":
-    speak("")
+    speak("AH SHIT! AN ERROR!")
     pass

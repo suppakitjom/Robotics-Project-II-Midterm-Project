@@ -14,7 +14,6 @@ def listen():
     r.dynamic_energy_threshold = True
 
     with sr.Microphone() as source:
-        # clear terminal
         os.system('cls' if os.name == 'nt' else 'clear')
         print("Say something!")
         global audio
