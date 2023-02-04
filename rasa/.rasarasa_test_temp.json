@@ -1,0 +1,48 @@
+{
+    "text": "I love titties",
+    "intent": {
+        "name": "allow",
+        "confidence": 0.9993367791175842
+    },
+    "entities": [],
+    "text_tokens": [
+        [
+            0,
+            1
+        ],
+        [
+            2,
+            6
+        ],
+        [
+            7,
+            14
+        ]
+    ],
+    "intent_ranking": [
+        {
+            "name": "allow",
+            "confidence": 0.9993367791175842
+        },
+        {
+            "name": "deny",
+            "confidence": 0.00046839017886668444
+        },
+        {
+            "name": "hello_world",
+            "confidence": 0.00019477555179037154
+        }
+    ],
+    "response_selector": {
+        "all_retrieval_intents": [],
+        "default": {
+            "response": {
+                "responses": null,
+                "confidence": 0.0,
+                "intent_response_key": null,
+                "utter_action": "utter_None"
+            },
+            "ranking": []
+        }
+    }
+}
