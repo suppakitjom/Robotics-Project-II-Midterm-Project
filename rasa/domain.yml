@@ -3,11 +3,9 @@ version: "3.1"
 intents:
   - allow
   - deny
-  - hello_world
-
-actions:
-  - action_hello_world
-  - action_send_intent
+  - fallback
+# actions:
+# - action_send_intent
 
 # responses:
 #   utter_greet:

@@ -9,7 +9,7 @@ nlu:
       - yes sure
       - yes
       - yes please
-      - yes please let them in
+      - could you please let them in
 
   - intent: deny
     examples: |
@@ -19,14 +19,12 @@ nlu:
       - don't let them in
       - don't let them in please
       - no, don't let them in
-      - no, don't let them in please
 
-  - intent: hello_world
+  - intent: fallback #only unrelated prompts
     examples: |
-      - hello world
-      - hello
-      - hi
-      - hey
-      - hello there
-      - hi there
-      - hey there
+      - I am looking for a place to stay.
+      - I want to book a room.
+      - I want to book a table.
+      - I like titties
+      - I like ass
+      - How are you doing

@@ -1,40 +1,40 @@
 {
-    "text": "please let them in",
+    "text": "i don't like titties",
     "intent": {
-        "name": "allow",
+        "name": "deny",
         "confidence": 1.0
     },
     "entities": [],
     "text_tokens": [
         [
             0,
-            6
+            1
         ],
         [
-            7,
-            10
+            2,
+            5
         ],
         [
-            11,
-            15
+            6,
+            7
         ],
         [
-            16,
-            18
+            8,
+            12
+        ],
+        [
+            13,
+            20
         ]
     ],
     "intent_ranking": [
         {
-            "name": "allow",
+            "name": "deny",
             "confidence": 1.0
         },
         {
-            "name": "hello_world",
-            "confidence": 1.6316649364966906e-08
-        },
-        {
-            "name": "deny",
-            "confidence": 8.282635133305405e-10
+            "name": "allow",
+            "confidence": 1.0364397708129136e-11
         }
     ],
     "response_selector": {

@@ -1,7 +1,7 @@
 # TODO get list of recognized faces from Jetson Nano - To be added
 
 recognized = ['Jom', 'Neno', 'Punn', 'Kitty', 'Roong']  # example
-recognized = ['Jom']
+# recognized = ['Jom']
 
 from tts.tts_functions import speakText, speakTextSSML
 
@@ -31,7 +31,7 @@ r = requests.post(rasa_url, json=payload)
 intent = r.json()['intent']['name']
 confidence = r.json()['intent']['confidence']
 
-while confidence < 0.7:
+while (intent not in ['allow', 'deny']) and (confidence < 0.7):
     speakTextSSML('Sorry, I did not get that. Please try again.')
     text = listen()
     payload = {"text": text}

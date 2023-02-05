@@ -25,7 +25,8 @@ def speakTextSSML(text):  #change voice and style in tts_voice_config.xml
                                               audio_config=audio_config)
     ssml_string = open("./tts/tts_voice_config.xml", "r").read()
     ssml_string = ssml_string.replace('TEXT', text)
-    sa.WaveObject.from_wave_file("./tts/ring.wav").play().wait_done()
+    # sa.WaveObject.from_wave_file("./tts/ring.wav").play().wait_done()
+    sa.WaveObject.from_wave_file("./tts/ring.wav").play()
     result = synthesizer.speak_ssml_async(ssml_string).get()
 
 
