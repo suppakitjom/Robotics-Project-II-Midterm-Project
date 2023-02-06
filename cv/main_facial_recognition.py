@@ -11,15 +11,9 @@ import os
 # PLEASE NOTE: This example requires OpenCV (the `cv2` library) to be installed only to read from your webcam.
 # OpenCV is *not* required to use the face_recognition library. It's only required if you want to run this
 # specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
-
-# camera setup
-[CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [1, 1920, 1080, 60]
-# [CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [0, 1280, 720, 60]
-cap = cv2.VideoCapture(CAMERA_PORT)
-cap.set(3, X_RESOLUTION)
-cap.set(4, Y_RESOLUTION)
-cap.set(5, VIDEO_FPS)
-
+# clear console
+os.system('cls' if os.name == 'nt' else 'clear')
+print('Loading known faces.....')
 # automatically loads the images in the known_faces folder
 known_face_encodings = []
 known_face_names = []
@@ -44,6 +38,16 @@ face_locations = []
 face_encodings = []
 face_names = []
 process_this_frame = True
+
+os.system('cls' if os.name == 'nt' else 'clear')
+print('Starting Camera.....')
+# camera setup
+[CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [1, 1920, 1080, 60]
+# [CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [0, 1280, 720, 60]
+cap = cv2.VideoCapture(CAMERA_PORT)
+cap.set(3, X_RESOLUTION)
+cap.set(4, Y_RESOLUTION)
+cap.set(5, VIDEO_FPS)
 
 while True:
     # Grab a single frame of video
