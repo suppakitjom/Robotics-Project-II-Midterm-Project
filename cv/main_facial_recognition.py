@@ -2,6 +2,7 @@ import face_recognition as fr
 import cv2
 import numpy as np
 import os
+import pickle
 
 # This is a demo of running face recognition on live video from your webcam. It's a little more complicated than the
 # other example, but it includes some basic performance tweaks to make things run a lot faster:
@@ -14,24 +15,11 @@ import os
 # clear console
 os.system('cls' if os.name == 'nt' else 'clear')
 print('Loading known faces.....')
-# automatically loads the images in the known_faces folder
 known_face_encodings = []
 known_face_names = []
-path = os.path.join(os.path.dirname(__file__), "known_faces")
-facelist = os.listdir(path)
-
-for name in facelist:
-    if name[0] == ".":  # skip hidden files
-        continue
-    known_face_encodings.append(
-        fr.face_encodings(fr.load_image_file("./known_faces/" + name))[0])
-    # remove the file extension from the name
-    name = name.split(".")[0]
-    # handle duplicate names for people with more than 1 sample image
-    if len(name.split()) > 1:
-        known_face_names.append(name.split()[0])
-    else:
-        known_face_names.append(name)
+with open("known_faces.dat", "rb") as face_data_file:
+    known_face_encodings, known_face_names = pickle.load(face_data_file)
+    print("Known faces loaded from disk.")
 
 # Initialize some variables
 face_locations = []
