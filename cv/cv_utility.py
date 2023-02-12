@@ -32,7 +32,7 @@ def save_known_faces():
         face_data = [known_face_encodings, known_face_names]
         pickle.dump(face_data, face_data_file)
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Known faces backed up to disk.")
+        print("Known faces saved locally.")
 
 
 if __name__ == "__main__":

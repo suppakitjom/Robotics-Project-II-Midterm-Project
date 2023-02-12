@@ -4,38 +4,32 @@ import numpy as np
 import os
 import pickle
 
-# This is a demo of running face recognition on live video from your webcam. It's a little more complicated than the
-# other example, but it includes some basic performance tweaks to make things run a lot faster:
-#   1. Process each video frame at 1/4 resolution (though still display it at full resolution)
-#   2. Only detect faces in every other frame of video.
-
-# PLEASE NOTE: This example requires OpenCV (the `cv2` library) to be installed only to read from your webcam.
-# OpenCV is *not* required to use the face_recognition library. It's only required if you want to run this
-# specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
-# clear console
-os.system('cls' if os.name == 'nt' else 'clear')
-print('Loading known faces.....')
-known_face_encodings = []
-known_face_names = []
-with open("known_faces.dat", "rb") as face_data_file:
-    known_face_encodings, known_face_names = pickle.load(face_data_file)
-    print("Known faces loaded from disk.")
-
-# Initialize some variables
-face_locations = []
-face_encodings = []
-face_names = []
-process_this_frame = True
+# set to True to print out the name and confidence of the detected face
+VERBOSE = True
 
 os.system('cls' if os.name == 'nt' else 'clear')
-print('Starting Camera.....')
+print('Starting Camera & Loading Stored Faces.....')
+
 # camera setup
-[CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [1, 1920, 1080, 60]
-# [CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [0, 1280, 720, 60]
+# [CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [1, 1920, 1080, 60]
+[CAMERA_PORT, X_RESOLUTION, Y_RESOLUTION, VIDEO_FPS] = [1, 1280, 720, 60]
 cap = cv2.VideoCapture(CAMERA_PORT)
 cap.set(3, X_RESOLUTION)
 cap.set(4, Y_RESOLUTION)
 cap.set(5, VIDEO_FPS)
+
+known_face_encodings = []
+known_face_names = []
+# load known faces from known_faces.dat and store in known_face_encodings and known_face_names
+with open("known_faces.dat", "rb") as face_data_file:
+    known_face_encodings, known_face_names = pickle.load(face_data_file)
+
+# Initialize variables to store face locations and encodings in frame
+face_locations = []
+face_encodings = []
+face_names = []
+# variable to force processing only every other frame
+process_this_frame = True
 
 while True:
     # Grab a single frame of video
@@ -68,10 +62,14 @@ while True:
             face_distances = fr.face_distance(known_face_encodings,
                                               face_encoding)
             best_match_index = np.argmin(face_distances)
-            print(face_distances[best_match_index])
+
             if matches[best_match_index] and face_distances[
                     best_match_index] < 0.45:
                 name = known_face_names[best_match_index]
+            # print name and confidence
+            if VERBOSE:
+                print('Detected: {}\tConfidence: {}'.format(
+                name, np.round(1 - face_distances[best_match_index], 3)))
 
             face_names.append(name)
         # dumps face names to a file
