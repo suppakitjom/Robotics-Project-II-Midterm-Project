@@ -67,15 +67,16 @@ while True:
                     best_match_index] < 0.45:
                 name = known_face_names[best_match_index]
             # print name and confidence
-            if VERBOSE:
+            if VERBOSE and name != "Unknown":
                 print('Detected: {}\tConfidence: {}'.format(
-                name, np.round(1 - face_distances[best_match_index], 3)))
+                    name, np.round(1 - face_distances[best_match_index], 3)))
 
             face_names.append(name)
         # dumps face names to a file
         with open("recognized.txt", "w") as f:
             for name in face_names:
-                f.write(name + "\n")
+                if name != "Unknown":
+                    f.write(name + "\n")
     process_this_frame = not process_this_frame
 
     # Display the results

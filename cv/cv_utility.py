@@ -27,6 +27,27 @@ def train_faces():
     print('Done encoding known faces.....')
 
 
+def train_faces_intense():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print('Encoding known faces (Intensive)....')
+    for name in facelist:
+        if name[0] == ".":  # skip hidden files
+            continue
+        known_face_encodings.append(
+            fr.face_encodings(fr.load_image_file("./known_faces/" +name),
+            num_jitters=100,
+            model='large')[0])
+        # remove the file extension from the name
+        name = name.split(".")[0]
+        # handle duplicate names for people with more than 1 sample image
+        if len(name.split()) > 1:
+            known_face_names.append(name.split()[0])
+        else:
+            known_face_names.append(name)
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print('Done encoding known faces.....')
+
+
 def save_known_faces():
     with open("known_faces.dat", "wb") as face_data_file:
         face_data = [known_face_encodings, known_face_names]
@@ -36,5 +57,6 @@ def save_known_faces():
 
 
 if __name__ == "__main__":
-    train_faces()
+    # train_faces() # for normal training
+    train_faces_intense()  # for intense training, will take 100x longer
     save_known_faces()
