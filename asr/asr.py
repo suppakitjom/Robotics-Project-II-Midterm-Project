@@ -2,6 +2,9 @@ import speech_recognition as sr
 from pydub import AudioSegment
 import io
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -22,7 +25,7 @@ def listen():
     return results
 
 
-app.run(host='localhost', port=5002)
+app.run(host=os.getenv('WINDOWS_IP_ADDRESS'), port=5002)
 
 if __name__ == "__main__":
     text = listen()

@@ -12,3 +12,4 @@ SpeechRecognition
 pydub
 azure-cognitiveservices-speech
 simpleaudio
+python-dotenv
