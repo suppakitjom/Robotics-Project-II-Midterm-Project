@@ -1,7 +1,3 @@
-'''
-Only to be imported by main.py
-'''
-
 import azure.cognitiveservices.speech as speechsdk
 import simpleaudio as sa
 
