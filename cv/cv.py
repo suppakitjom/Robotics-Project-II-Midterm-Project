@@ -1,3 +1,7 @@
+'''
+server to handle requests on Jetson Nano
+'''
+
 from flask import Flask
 import os
 from dotenv import load_dotenv
@@ -16,4 +20,4 @@ def getRecognizedPeople():
     return {'recognized': recognized}
 
 
-app.run(host=os.getenv('WINDOWS_IP_ADDRESS'), port=5000)
+app.run(host=os.getenv('JETSON_IP_ADDRESS'), port=5000)

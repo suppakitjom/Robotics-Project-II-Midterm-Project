@@ -10,7 +10,7 @@ def process_command(text):
     intent = r.json()['intent']['name']
     confidence = r.json()['intent']['confidence']
 
-    while (intent not in ['allow', 'deny']) and (confidence < 0.7):
+    while (intent not in ['allow', 'deny']) or (confidence < 0.7):
         speakTextSSML('Sorry, I did not get that. Please try again.')
         text = listen()
         payload = {"text": text}

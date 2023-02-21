@@ -5,7 +5,8 @@ import requests
 
 
 def getRecognizedPeople():
-    cv_url_jetson = 'http://192.168.2.2:5000/cv'
+    cv_url_jetson = 'http://172.20.10.2:5000/cv'
+    # cv_url_jetson = 'http://192.168.2.2:5000/cv'
     r = requests.get(cv_url_jetson)
     return r.json()  #getRecognizedPeople()['recognized']
 
@@ -66,5 +67,6 @@ def save_known_faces():
 
 if __name__ == "__main__":
     # train_faces() # for normal training
-    train_faces_intense()  # for intense training, will take 100x longer
-    save_known_faces()
+    # train_faces_intense()  # for intense training, will take 100x longer
+    # save_known_faces()
+    print(getRecognizedPeople()['recognized'])

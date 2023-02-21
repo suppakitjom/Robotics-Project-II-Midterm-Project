@@ -3,9 +3,12 @@ import os
 import time
 
 
-def listen():
+def listen() -> str:
+    '''
+    Listen to user and return the result as a string
+    '''
     r = sr.Recognizer()
-    r.energy_threshold = 300  #4500 works well in MI lab
+    r.energy_threshold = 5000  #5000 works well in MI lab
     r.dynamic_energy_threshold = True
 
     with sr.Microphone() as source:

@@ -10,15 +10,19 @@ nlu:
       - yes
       - yes please
       - could you please let them in
+      - please do
 
   - intent: deny
     examples: |
       - no
+      - nope
+      - no thanks
       - no please
       - no please don't let them in
       - don't let them in
       - don't let them in please
       - no, don't let them in
+      - please don't
 
   - intent: fallback #only unrelated prompts
     examples: |
@@ -28,3 +32,4 @@ nlu:
       - I like titties
       - I like ass
       - How are you doing
+      - Fuck
