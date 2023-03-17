@@ -11,6 +11,7 @@ from flask import Flask, request
 import requests as req
 
 app = Flask(__name__)
+
 from cv.cv_utility import getRecognizedPeople
 from tts.tts_functions import speakTextSSML, speakText
 from asr.asr_functions import listen
@@ -49,7 +50,10 @@ def main():
     # act according to the user's intent
     if intent == 'allow' and confidence > 0.95:
         speakTextSSML('Okay, I will let them in now.')
-        # TODO send command to Jetson Nano to open the door - To be added
+        # TODO send command to Jetson Nano to open the door
+        # JETSON_IP_ADDRESS = '172.20.10.2' #moj
+        JETSON_IP_ADDRESS = '192.168.2.2'  #lan
+        req.get(url=JETSON_IP_ADDRESS + '/open_door')
     elif intent == 'deny' and confidence > 0.95:
         speakTextSSML('Okay, I will not let them in.')
     return 'DONE'
@@ -57,5 +61,5 @@ def main():
 
 if __name__ == '__main__':
     # main()
-    app.run('172.20.10.4', port=5001)
-    # app.run('localhost', port=5001)
+    # app.run('172.20.10.4', port=5001)
+    app.run('192.168.2.1', port=5001)

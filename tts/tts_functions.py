@@ -15,8 +15,12 @@ def speakText(text):
 
 
 def speakTextSSML(text):  #change voice and style in tts_voice_config.xml
+    '''
+    Speak text using configurations in the tts_voice_config.xml file
+    can be used to change the voice and style of the speaker
+    '''
     if not text:
-        text = 'An Unknown Person is at the door. Would you like to let them in?'
+        return
     synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config,
                                               audio_config=audio_config)
     ssml_string = open("./tts/tts_voice_config.xml", "r").read()
