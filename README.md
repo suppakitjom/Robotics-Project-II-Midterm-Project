@@ -1,30 +1,17 @@
-# Robotics-Project-II-Midterm-Project
+# Robotics Project II Midterm Project - Facial Recognition Doorbell for Visually Impaired Individuals
+### Hardware
+- Jetson Nano
+- Servo Motor
+- 1080p USB Webcam
+- Electromagnetic Lock
 
-# Details
+### Software
+- GPIO Programming (Jetson Nano)
+- Facial Recognition
+- Automatic Speech Recognition
+- Natural Language Understanding
+- Text to Speech
 
-cv_url : http://localhost:5000/cv
+[Paper](https://chula-my.sharepoint.com/:w:/g/personal/6438232221_student_chula_ac_th/ERJC1cOAYWpIi05NPWI4nr8BWZM7J6gBQnpvkrwAtptNfA?e=4X5C5Q)
 
-tts_url : http://localhost:5001/tts
-
-asr_url : http://localhost:5002/stt
-
-rasa_url : http://localhost:5005/model/parse
-
-## ASR (OpenAI Whisper) [GitHub](https://github.com/openai/whisper)
-
-`cd asr`
-
-`python asr.py`
-
-## TTS (Microsoft Azure Text-To-Speech) [Documentation](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/index-text-to-speech)
-
-`cd tts`
-
-`python tts.py`
-
-## NLU (Rasa) [Documentation](https://rasa.com/docs/rasa/)
-
-`cd rasa`
-
-run the server
-`rasa run --enable-api`
+[Presentation](https://www.canva.com/design/DAFdsgWDtNU/ucmkaOkTocrWhG-7YQygLQ/view?utm_content=DAFdsgWDtNU&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink#3)
